@@ -27,6 +27,11 @@ FILE_NOT_FOUND=11
 
 # Check that the argument passed to this script is a directory.
 # If it's not, then exit with an error code.
+if [ $# -ne 1 ]
+then
+    echo "You need to select the root directory for the scan"
+    exit 1
+fi
 if [ ! -d "$1" ]
 then
 	echo "Arg "$1" is NOT a directory!"
